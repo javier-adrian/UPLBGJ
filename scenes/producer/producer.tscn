@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx1dwlix2gmg4"]
+
+[ext_resource type="Script" uid="uid://kalg86l717d4" path="res://scripts/producer.gd" id="1_x1hvf"]
+[ext_resource type="Script" uid="uid://bqruqo22uvauj" path="res://scripts/track.gd" id="2_jsjrv"]
+[ext_resource type="Script" uid="uid://dljbnlxwmri1w" path="res://scripts/metronome.gd" id="2_ov448"]
+
+[node name="producer" type="CanvasLayer"]
+script = ExtResource("1_x1hvf")
+
+[node name="tracks" type="VBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="metronome" type="Timer" parent="tracks"]
+wait_time = 0.5
+script = ExtResource("2_ov448")
+
+[node name="track" type="HBoxContainer" parent="tracks"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("2_jsjrv")
+
+[node name="ReferenceRect8" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect9" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect10" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect11" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect12" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect7" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="ReferenceRect13" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect14" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ReferenceRect15" type="ColorRect" parent="tracks/track"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[connection signal="timeout" from="tracks/metronome" to="tracks/metronome" method="_on_timeout"]
