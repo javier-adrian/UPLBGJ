@@ -5,6 +5,15 @@ extends Node2D
 
 var queue = []
 
+var distance_perfect: float = 5
+var distance_great: float = 10
+var distance_good: float = 20
+var distance_uninstall: float = 40
+
+var score_perfect: float = 250
+var score_great: float = 100
+var score_good: float = 50
+var score_uninstall: float = 20
 
 func _process(delta):
 	if !queue.is_empty():
@@ -15,16 +24,17 @@ func _process(delta):
 		if Input.is_action_just_pressed(key):
 			var note = queue.pop_front()
 			var distance = abs(position.y - note.global_position.y)
+			if distance < distance_perfect:
+				Manager.increment_score.emit(score_perfect)
+			elif distance < distance_great:
+				Manager.increment_score.emit(score_great)
+			elif distance < distance_good:
+				Manager.increment_score.emit(score_good)
+			elif distance < distance_uninstall:
+				Manager.increment_score.emit(score_uninstall)
+
 			note.queue_free()
-			if distance < 5:
-				print("perfect")
-			elif distance < 10:
-				print("great")
-			elif distance < 20:
-				print("good")
-			elif distance < 40:
-				print("uninstall")
-			Manager.increment_score.emit(100)
+				
 			
 
 
