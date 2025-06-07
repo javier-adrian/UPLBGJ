@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b307ypo35oj6j"]
+[gd_scene load_steps=4 format=3 uid="uid://b307ypo35oj6j"]
 
 [ext_resource type="PackedScene" uid="uid://dq45oddu6x63p" path="res://scenes/listener/listener.tscn" id="1_h3e3j"]
 [ext_resource type="PackedScene" uid="uid://c73iy25eist6y" path="res://scenes/user_interface/user_interface.tscn" id="2_nbgty"]
+[ext_resource type="PackedScene" uid="uid://bxp4l5dd2xsik" path="res://scenes/editor/editor.tscn" id="3_i166f"]
 
 [node name="level" type="Node2D"]
 
@@ -10,10 +11,12 @@
 [node name="listener" parent="." instance=ExtResource("1_h3e3j")]
 position = Vector2(-100, 200)
 key = "up"
+index = 1
 
 [node name="listener2" parent="." instance=ExtResource("1_h3e3j")]
 position = Vector2(100, 200)
 key = "down"
+index = 2
 
 [node name="listener3" parent="." instance=ExtResource("1_h3e3j")]
 position = Vector2(-300, 200)
@@ -22,5 +25,8 @@ key = "left"
 [node name="listener4" parent="." instance=ExtResource("1_h3e3j")]
 position = Vector2(300, 200)
 key = "right"
+index = 3
 
 [node name="user_interface" parent="." instance=ExtResource("2_nbgty")]
+
+[node name="editor" parent="." instance=ExtResource("3_i166f")]
