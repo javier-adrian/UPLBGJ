@@ -5,7 +5,7 @@ var title: String = "Rhythm Hell"
 
 var info: Dictionary = {
 	"Rhythm Hell": {
-		"timings":  "[[1, 3],[1.5, 3.5],[2, 4],[2.5, 4.5]]",
+		"timings":  "[[0, 2],[0.5, 2.5],[1, 3],[1.5, 3.5]]",
 		"music": load("res://RhythmHell.wav")
 	}
 }
