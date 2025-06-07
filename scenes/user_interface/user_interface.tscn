@@ -19,3 +19,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "0
 "
+
+[node name="combo" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = 56.0
+offset_right = 41.0
+offset_bottom = 96.0
+text = "x0"
