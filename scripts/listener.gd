@@ -24,6 +24,7 @@ func _process(delta):
 				print("good")
 			elif distance < 40:
 				print("uninstall")
+			Manager.increment_score.emit(100)
 			
 
 
