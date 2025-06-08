@@ -6,10 +6,10 @@ extends Node2D
 @export var index: int = 0
 
 @onready var sfx: Dictionary = {
-	"left": load("res://A Key - Laban.wav"),
-	"up": load("res://assets/S Key - Clap.wav"),
-	"down": load("res://D Key - Stomp.wav"),
-	"right": load("res://F Key Alternate - Woooh.wav")
+	"left": load("res://assets/audio/A Key - Laban.wav"),
+	"up": load("res://assets/audio/S Key - Clap.wav"),
+	"down": load("res://assets/audio/D Key - Stomp.wav"),
+	"right": load("res://assets/audio/F Key Alternate - Woooh.wav")
 }
 
 var queue = []
@@ -32,7 +32,7 @@ func _input(event):
 	if Input.is_action_just_pressed(key):
 		Manager.listener_press.emit(key, index)
 		%sfx.play()
-		print(%sfx.playing)
+		print(key)
 
 func _process(delta):
 	if !queue.is_empty():

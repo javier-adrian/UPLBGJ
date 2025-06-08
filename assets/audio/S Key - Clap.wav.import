@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceufpd1650pg2"
-path="res://.godot/imported/S Key - Clap.wav-63942f449a2387e78f3f8036cd7e76c1.sample"
+path="res://.godot/imported/S Key - Clap.wav-8ceb65de7c9ef44276715e7e2a0959c5.sample"
 
 [deps]
 
-source_file="res://assets/S Key - Clap.wav"
-dest_files=["res://.godot/imported/S Key - Clap.wav-63942f449a2387e78f3f8036cd7e76c1.sample"]
+source_file="res://assets/audio/S Key - Clap.wav"
+dest_files=["res://.godot/imported/S Key - Clap.wav-8ceb65de7c9ef44276715e7e2a0959c5.sample"]
 
 [params]
 

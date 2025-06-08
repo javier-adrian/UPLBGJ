@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnvrs2pcit5ha"
-path="res://.godot/imported/F Key Alternate - Woooh.wav-b8a9cf71c53a5713373f4cc486c18740.sample"
+path="res://.godot/imported/F Key Alternate - Woooh.wav-af6a64364e4c51f14ace5868e60a09cd.sample"
 
 [deps]
 
-source_file="res://F Key Alternate - Woooh.wav"
-dest_files=["res://.godot/imported/F Key Alternate - Woooh.wav-b8a9cf71c53a5713373f4cc486c18740.sample"]
+source_file="res://assets/audio/F Key Alternate - Woooh.wav"
+dest_files=["res://.godot/imported/F Key Alternate - Woooh.wav-af6a64364e4c51f14ace5868e60a09cd.sample"]
 
 [params]
 

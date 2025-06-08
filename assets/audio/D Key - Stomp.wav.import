@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cj4frc6exwbpq"
-path="res://.godot/imported/D Key - Stomp.wav-0a3a77eab97b27595e69cfbef4b3d009.sample"
+path="res://.godot/imported/D Key - Stomp.wav-e8100ace0d5def4317295c3664f89eec.sample"
 
 [deps]
 
-source_file="res://D Key - Stomp.wav"
-dest_files=["res://.godot/imported/D Key - Stomp.wav-0a3a77eab97b27595e69cfbef4b3d009.sample"]
+source_file="res://assets/audio/D Key - Stomp.wav"
+dest_files=["res://.godot/imported/D Key - Stomp.wav-e8100ace0d5def4317295c3664f89eec.sample"]
 
 [params]
 

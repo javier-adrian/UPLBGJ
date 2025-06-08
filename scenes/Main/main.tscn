@@ -17,4 +17,6 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="play" from="StartMenu" to="." method="_on_start_menu_play"]

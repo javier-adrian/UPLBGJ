@@ -7,3 +7,6 @@ func switch():
 		$AnimationPlayer.play("zoom_out")
 	else:
 		$AnimationPlayer.play("zoom_in")
+
+func start():
+	$AnimationPlayer.play("crowd")

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dxd6h4fqi31xv"
-path="res://.godot/imported/A Key - Suntok.wav-b385fddbf00db00270fa6531c860434e.sample"
+path="res://.godot/imported/A Key - Suntok.wav-e2c4105e73f0ec724e8af91d09887b9a.sample"
 
 [deps]
 
-source_file="res://A Key - Suntok.wav"
-dest_files=["res://.godot/imported/A Key - Suntok.wav-b385fddbf00db00270fa6531c860434e.sample"]
+source_file="res://assets/audio/A Key - Suntok.wav"
+dest_files=["res://.godot/imported/A Key - Suntok.wav-e2c4105e73f0ec724e8af91d09887b9a.sample"]
 
 [params]
 

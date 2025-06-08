@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfrsighg78mcv"
-path="res://.godot/imported/A Key - Laban.wav-337531a4fe86cb5a5195aa3fe2f4a06a.sample"
+path="res://.godot/imported/A Key - Laban.wav-8347038866840cc619a89a13c022b9f7.sample"
 
 [deps]
 
-source_file="res://A Key - Laban.wav"
-dest_files=["res://.godot/imported/A Key - Laban.wav-337531a4fe86cb5a5195aa3fe2f4a06a.sample"]
+source_file="res://assets/audio/A Key - Laban.wav"
+dest_files=["res://.godot/imported/A Key - Laban.wav-8347038866840cc619a89a13c022b9f7.sample"]
 
 [params]
 
