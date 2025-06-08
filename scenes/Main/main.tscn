@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbkx6yhtn6ec2"]
+[gd_scene load_steps=3 format=3 uid="uid://bbkx6yhtn6ec2"]
 
 [ext_resource type="Script" uid="uid://cnp7ceeecfhof" path="res://scripts/main.gd" id="1_gol0p"]
+[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://imgpreview1.png" id="2_br8qb"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gol0p")
+
+[node name="Imgpreview1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(548, 691)
+scale = Vector2(2.84306, 2.84306)
+texture = ExtResource("2_br8qb")
+
+[node name="Camera2D" type="Camera2D" parent="."]

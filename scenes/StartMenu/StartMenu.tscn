@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvg6wiq8bcvsr"]
+[gd_scene load_steps=8 format=3 uid="uid://cvg6wiq8bcvsr"]
 
-[ext_resource type="Texture2D" uid="uid://bryatqsb2nj5m" path="res://placeholderBG.jpg" id="1_bpygb"]
-[ext_resource type="Texture2D" uid="uid://26xuk83ne0tx" path="res://assets/gol.png" id="2_80ocu"]
+[ext_resource type="Texture2D" uid="uid://erq67mqkhkj3" path="res://GameScreen2_Title.png" id="1_80ocu"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="3_5a8d0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80ocu"]
-texture = ExtResource("1_bpygb")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5a8d0"]
 
@@ -83,7 +81,7 @@ theme_override_constants/margin_bottom = 50
 custom_minimum_size = Vector2(839.52, 330)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("2_80ocu")
+texture = ExtResource("1_80ocu")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
