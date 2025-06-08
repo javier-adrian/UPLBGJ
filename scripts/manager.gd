@@ -9,3 +9,5 @@ signal spawn_note(key: String)
 
 signal listener_press(key: String, index: int)
 
+signal decrement_spirit(value: float)
+signal increment_spirit(value: float)

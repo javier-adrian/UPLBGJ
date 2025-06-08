@@ -40,20 +40,24 @@ func _process(delta):
 				rating_text = "PERFECT"
 				Manager.increment_score.emit(score_perfect)
 				Manager.increment_combo.emit()
+				Manager.increment_spirit.emit(5.0)
 			elif distance < distance_great:
 				rating_text = "GREAT"
 				Manager.increment_score.emit(score_great)
 				Manager.increment_combo.emit()
+				Manager.increment_spirit.emit(2.5)
 			elif distance < distance_good:
 				rating_text = "GOOD"
 				Manager.increment_score.emit(score_good)
 				Manager.increment_combo.emit()
+				Manager.increment_spirit.emit(1.25)
 			elif distance < distance_uninstall:
 				rating_text = "UNINSTALL!"
 				Manager.increment_score.emit(score_uninstall)
 				Manager.reset_combo.emit()
 			else:
 				Manager.reset_combo.emit()
+				Manager.decrement_spirit.emit(10.0)
 
 			note.queue_free()
 

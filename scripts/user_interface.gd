@@ -2,13 +2,20 @@ extends Control
 
 var score: int = 0
 var combo: int = 0
+var spirit_started: bool = false
 
 func _ready():
 	Manager.increment_score.connect(increment_score)
 	Manager.increment_combo.connect(increment_combo)
 	Manager.reset_combo.connect(reset_combo)
+	Manager.increment_spirit.connect(increment_spirit)
+	Manager.decrement_spirit.connect(decrement_spirit)
 	# await get_tree().create_timer(3).timeout
 	# $RhythmHell.play()
+
+func _process(delta):
+	if spirit_started:
+		%spirit.value -= 0.01
 
 func increment_score(n: int):
 	score += n
@@ -22,3 +29,14 @@ func increment_combo():
 func reset_combo():
 	combo = 0
 	%combo.text = str(combo)
+
+func increment_spirit(value: float):
+	%spirit.value += value
+
+	if !spirit_started:
+		spirit_started = true
+
+func decrement_spirit(value: float):
+	if spirit_started:
+		%spirit.value -= value
+	return

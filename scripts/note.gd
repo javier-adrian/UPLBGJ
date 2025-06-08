@@ -18,6 +18,7 @@ func _process(delta):
 		# print($Timer.time_left) #
 		$Timer.stop()
 		passed = true
+		Manager.decrement_spirit.emit(10.0)
 
 
 

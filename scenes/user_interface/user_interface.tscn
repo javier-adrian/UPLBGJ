@@ -20,6 +20,7 @@ offset_bottom = 40.0
 
 [node name="score" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_e2uov")
 text = "0
@@ -27,9 +28,11 @@ text = "0
 
 [node name="combo" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 text = "x0"
 
 [node name="spirit" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
