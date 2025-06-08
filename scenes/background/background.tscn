@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bang35dyd40e6"]
 
-[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://imgpreview1.png" id="1_iheb5"]
+[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://assets/visual/background/imgpreview1.png" id="1_iheb5"]
 [ext_resource type="Script" uid="uid://cmurf3i6chnix" path="res://scripts/background.gd" id="1_pesyb"]
 
 [sub_resource type="Animation" id="Animation_rsf5d"]

@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dketdm3pt0mat"]
+[gd_scene load_steps=16 format=3 uid="uid://dketdm3pt0mat"]
 
 [ext_resource type="Script" uid="uid://b81koo7ybxao4" path="res://scripts/gameplay_background.gd" id="1_ipat5"]
-[ext_resource type="Texture2D" uid="uid://dx3t1v8hwooh6" path="res://chair1.png" id="1_pxiao"]
-[ext_resource type="Texture2D" uid="uid://3svnj166y0by" path="res://bg1.png" id="2_ipat5"]
-[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://imgpreview1.png" id="2_o0qmw"]
+[ext_resource type="Texture2D" uid="uid://dx3t1v8hwooh6" path="res://assets/visual/background/chair1.png" id="1_pxiao"]
+[ext_resource type="Texture2D" uid="uid://3svnj166y0by" path="res://assets/visual/background/bg1.png" id="2_ipat5"]
+[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://assets/visual/background/imgpreview1.png" id="2_o0qmw"]
 [ext_resource type="Texture2D" uid="uid://dq7oto88etsyk" path="res://objects.png" id="3_o0qmw"]
-[ext_resource type="Texture2D" uid="uid://driqfqymqdy21" path="res://tv1.png" id="4_m8nf8"]
-[ext_resource type="Texture2D" uid="uid://c7stnwjsf8hc6" path="res://chracters.png" id="7_m8nf8"]
+[ext_resource type="Texture2D" uid="uid://driqfqymqdy21" path="res://assets/visual/background/tv1.png" id="4_m8nf8"]
+[ext_resource type="Texture2D" uid="uid://c7stnwjsf8hc6" path="res://assets/visual/background/chracters.png" id="7_m8nf8"]
+[ext_resource type="Texture2D" uid="uid://ps7rwc4y17kn" path="res://assets/visual/boxing/gray bg_092903.png" id="8_fxnec"]
+[ext_resource type="Texture2D" uid="uid://bbi0h21o1qqml" path="res://assets/visual/boxing/character_animation_092903.png" id="9_nltvl"]
+[ext_resource type="Texture2D" uid="uid://yfsb48u44ylw" path="res://assets/visual/boxing/red thing_092901.png" id="10_xtuwl"]
 
 [sub_resource type="Animation" id="Animation_ipat5"]
 length = 0.001
@@ -94,6 +97,78 @@ tracks/6/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RedThing092901:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GrayBg092903:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CharacterAnimation092903:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CharacterAnimation092904:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CharacterAnimation092904:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CharacterAnimation092903:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_vsnhs"]
 resource_name = "crowd"
@@ -157,6 +232,78 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [1, 0, 1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GrayBg092903:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CharacterAnimation092903:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CharacterAnimation092904:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RedThing092901:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CharacterAnimation092903:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 1, 6]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CharacterAnimation092904:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [18, 19, 18]
 }
 
 [sub_resource type="Animation" id="Animation_m8nf8"]
@@ -310,9 +457,40 @@ libraries = {
 &"": SubResource("AnimationLibrary_o0qmw")
 }
 
-[node name="Imgpreview2" type="Sprite2D" parent="."]
+[node name="GrayBg092903" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
-position = Vector2(-0.351685, 2.11044)
-scale = Vector2(0.897917, 0.897917)
-texture = ExtResource("2_o0qmw")
+position = Vector2(25.3254, -78.6142)
+scale = Vector2(3.59714, 3.59479)
+texture = ExtResource("8_fxnec")
+
+[node name="CharacterAnimation092904" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(51.0025, -46.4298)
+scale = Vector2(3.89222, 3.89222)
+texture = ExtResource("9_nltvl")
+hframes = 6
+vframes = 4
+frame = 18
+region_enabled = true
+region_rect = Rect2(0, 0, 190, 135)
+
+[node name="CharacterAnimation092903" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-26.3806, -61.9064)
+scale = Vector2(3.85818, 3.85818)
+texture = ExtResource("9_nltvl")
+hframes = 6
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2(0, 0, 190, 135)
+
+[node name="RedThing092901" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(25.3254, -111.502)
+scale = Vector2(3.59714, 3.59714)
+texture = ExtResource("10_xtuwl")

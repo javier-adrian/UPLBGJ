@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3svnj166y0by"
-path="res://.godot/imported/bg1.png-0077aa1b2be9530528802b2eeb0b4b9d.ctex"
+uid="uid://bbi0h21o1qqml"
+path="res://.godot/imported/character_animation_092903.png-593648c3c81b68b427164b87df304951.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bg1.png"
-dest_files=["res://.godot/imported/bg1.png-0077aa1b2be9530528802b2eeb0b4b9d.ctex"]
+source_file="res://assets/visual/boxing/character_animation_092903.png"
+dest_files=["res://.godot/imported/character_animation_092903.png-593648c3c81b68b427164b87df304951.ctex"]
 
 [params]
 
