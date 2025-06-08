@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c73iy25eist6y"]
+[gd_scene load_steps=3 format=3 uid="uid://c73iy25eist6y"]
 
 [ext_resource type="Script" uid="uid://ej382rxw0sud" path="res://scripts/user_interface.gd" id="1_yqwyh"]
+[ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_e2uov"]
 
 [node name="user_interface" type="Control"]
 layout_mode = 3
@@ -17,6 +18,7 @@ script = ExtResource("1_yqwyh")
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_e2uov")
 text = "0
 "
 

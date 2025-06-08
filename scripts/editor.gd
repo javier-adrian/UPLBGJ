@@ -1,7 +1,7 @@
 extends Node2D
 
 var editing: bool = false
-var title: String = "Rhythm Hell"
+var title: String = "Three Red Hearts"
 
 var fall_delay: float = 4.66
 
@@ -11,7 +11,13 @@ var info: Dictionary = {
 	"Rhythm Hell": {
 		"timings":  "[[4.75],[5.25],[5.75],[6.25]]",
 		"music": load("res://RhythmHell.wav")
-	}
+	},
+
+	"Three Red Hearts": {
+		"timings":  "[[],[],[5.66, 5.8, 6.33, 7.1, 7.87, 8.66, 9.4, 10.0, 10.9, 11.6, 11.8, 12.33, 13.1, 13.9, 14.6],[5.4, 9.0, 11.4, 12.0, 12.75, 12.9, 13.33, 13.7, 14.0, 14.45]]",
+		"music": load("res://[Boxing] Three Red Hearts - Box Jump.ogg")
+	},
+
 }
 
 func _ready():
