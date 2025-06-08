@@ -46,6 +46,9 @@ func _input(event):
 	if Input.is_action_just_released(key):
 		$sprite.modulate = Color8(255, 255, 255, 153)
 		$sprite.scale = Vector2(1.75, 1.75)
+	if Input.is_key_pressed(KEY_ESCAPE):
+		print("lskdfjl")
+		get_parent().set_process(false)
 
 func _process(delta):
 	if !queue.is_empty():
