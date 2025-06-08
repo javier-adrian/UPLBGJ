@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvg6wiq8bcvsr"]
+[gd_scene load_steps=12 format=3 uid="uid://cvg6wiq8bcvsr"]
 
+[ext_resource type="Script" uid="uid://y37qeuvchaf6" path="res://scripts/start_menu.gd" id="1_5a8d0"]
 [ext_resource type="Texture2D" uid="uid://erq67mqkhkj3" path="res://GameScreen2_Title.png" id="1_80ocu"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="3_5a8d0"]
 
@@ -37,6 +38,56 @@ shadow_color = Color(0.411765, 0.411765, 0.411765, 0)
 shadow_size = 5
 shadow_offset = Vector2(2.33, 2.935)
 
+[sub_resource type="Animation" id="Animation_5a8d0"]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_58mk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_krr3s"]
+_data = {
+&"RESET": SubResource("Animation_58mk3"),
+&"play": SubResource("Animation_5a8d0")
+}
+
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +95,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5a8d0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -95,7 +147,8 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="play" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(175, 80)
 layout_direction = 2
@@ -173,7 +226,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_krr3s")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a8d0")
 text = "CREDITS"
 
-[node name="Button5" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="quit" type="Button" parent="Panel/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(175, 80)
 layout_direction = 2
 layout_mode = 2
@@ -191,3 +245,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_58mk3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_krr3s")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a8d0")
 text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_krr3s")
+}
+
+[connection signal="button_down" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/quit" to="." method="_on_quit_button_down"]
