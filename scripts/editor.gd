@@ -25,6 +25,9 @@ var info: Dictionary = {
 func _ready():
 	$Player.stream = info.get(title).get("music")
 	$Player.play()
+	
+	# Connect song finished signal to handle game end
+	$Player.finished.connect(on_song_finished)
 
 	if editing:
 		Manager.listener_press.connect(listener_press)
@@ -68,3 +71,15 @@ func spawn_note(key: String, delay: float):
 
 func _on_player_finished() -> void:
 	print(key_output)
+
+# Handle song completion
+func on_song_finished():
+	# Find the user interface and trigger song end check
+	var ui = get_tree().get_nodes_in_group("user_interface")
+	if ui.size() > 0:
+		ui[0].on_song_finished()
+	else:
+		# Fallback if UI not found
+		if !get_tree().get_nodes_in_group("game_ended"):
+			Manager.game_failure.emit()
+

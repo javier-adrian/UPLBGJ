@@ -11,3 +11,7 @@ signal listener_press(key: String, index: int)
 
 signal decrement_spirit(value: float)
 signal increment_spirit(value: float)
+
+# New signals for game success/failure
+signal game_success()
+signal game_failure()

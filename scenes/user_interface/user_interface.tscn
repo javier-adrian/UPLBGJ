@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ej382rxw0sud" path="res://scripts/user_interface.gd" id="1_yqwyh"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_e2uov"]
 
-[node name="user_interface" type="Control"]
+[node name="user_interface" type="Control" groups=["user_interface"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,3 +36,4 @@ text = "x0"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+max_value = 101.0

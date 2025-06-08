@@ -5,6 +5,7 @@ var combo: int = 0
 var spirit_started: bool = false
 var combo_multiplier: float = 1.0
 var combo_threshold: int = 5  # Combo needed for multiplier
+var game_ended: bool = false  # Track if game has already ended
 
 func _ready():
 	Manager.increment_score.connect(increment_score)
@@ -16,8 +17,20 @@ func _ready():
 	# $RhythmHell.play()
 
 func _process(delta):
-	if spirit_started:
+	if spirit_started and !game_ended:
 		%spirit.value -= 0.01
+		
+		# Check for success condition
+		if %spirit.value >= 100:
+			game_ended = true
+			Manager.game_success.emit()
+			print("Success! Spirit reached 100!")
+		
+		# Check for failure condition (spirit depleted)
+		elif %spirit.value <= 0:
+			game_ended = true
+			Manager.game_failure.emit()
+			print("Failure! Spirit depleted!")
 
 func increment_score(n: int):
 	var points = n
@@ -54,4 +67,14 @@ func increment_spirit(value: float):
 func decrement_spirit(value: float):
 	if spirit_started:
 		%spirit.value -= value
-	return
+
+# Connect to song end (call this from your song player)
+func on_song_finished():
+	if !game_ended:
+		if %spirit.value >= 50:  # Optional: require at least half spirit to succeed
+			Manager.game_success.emit()
+			print("Success! Song completed with sufficient spirit!")
+		else:
+			Manager.game_failure.emit()
+			print("Failure! Song completed with insufficient spirit!")
+		game_ended = true
