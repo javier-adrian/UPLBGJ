@@ -34,7 +34,7 @@ func _process(delta):
 			var note = queue.pop_front()
 			var distance = abs(position.y - note.global_position.y)
 
-			var rating_text = "FUCKING MORON"
+			var rating_text = "MISS"
 
 			if distance < distance_perfect:
 				rating_text = "PERFECT"
