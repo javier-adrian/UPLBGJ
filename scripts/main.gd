@@ -14,6 +14,7 @@ func _on_start_menu_play() -> void:
 	# $background.queue_free()
 	var level_instance = level1.instantiate()
 	get_tree().root.call_deferred("add_child", level_instance)
+	$gameplay_background/AnimationPlayer.play("crowd")
 
 func _on_start_menu_about() -> void:
 	print("Main received About signal - changing scene")

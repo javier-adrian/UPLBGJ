@@ -8,10 +8,10 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gol0p")
 
-[node name="gameplay_background" parent="." instance=ExtResource("3_8gcrf")]
-
 [node name="background" parent="." instance=ExtResource("2_br8qb")]
 visible = false
+
+[node name="gameplay_background" parent="." instance=ExtResource("3_8gcrf")]
 
 [node name="StartMenu" parent="." instance=ExtResource("4_px18m")]
 
