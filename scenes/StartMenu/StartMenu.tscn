@@ -9,22 +9,22 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5a8d0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58mk3"]
-bg_color = Color(0.687212, 0.687217, 0.687212, 1)
+bg_color = Color(0.686275, 0.686275, 0.686275, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-shadow_color = Color(0.412152, 0.412152, 0.412152, 0.6)
+shadow_color = Color(0.411765, 0.411765, 0.411765, 0)
 shadow_size = 5
 shadow_offset = Vector2(2.33, 2.935)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krr3s"]
-bg_color = Color(0.332878, 0.332882, 0.332878, 1)
+bg_color = Color(0.333333, 0.333333, 0.333333, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-shadow_color = Color(0.412152, 0.412152, 0.412152, 0.6)
+shadow_color = Color(0.411765, 0.411765, 0.411765, 0)
 shadow_size = 5
 shadow_offset = Vector2(2.33, 2.935)
 
