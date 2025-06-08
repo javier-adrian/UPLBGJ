@@ -24,15 +24,18 @@ func _on_quit_button_down() -> void:
 
 
 func _on_how_to_play_button_down() -> void:
-	get_tree().change_scene_to_file("res://scenes/HowToPlay/HowToPlay.tscn")
+	print("How to Play button clicked - emitting signal")
+	how_to_play.emit()
 
 
 func _on_about_button_down() -> void:
-	get_tree().change_scene_to_file("res://scenes/About/About.tscn")
+	print("About button clicked - emitting signal")
+	about.emit()
 
 
 func _on_credits_button_down() -> void:
-	get_tree().change_scene_to_file("res://scenes/Credits/Credits.tscn")
+	print("Credits button clicked - emitting signal")
+	credits.emit()
 
 
 # Alternative direct method if signal approach doesn't work

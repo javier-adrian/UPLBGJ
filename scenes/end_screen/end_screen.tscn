@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8y5r6xdj4p2v"]
 
-[ext_resource type="Script" uid="uid://tvf6dyro8b4g" path="res://scripts/end_screen.gd" id="1_e4s2r"]
+[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_e4s2r"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_f3g7p"]
 [ext_resource type="Texture2D" uid="uid://erq67mqkhkj3" path="res://GameScreen2_Title.png" id="3_k8p2r"]
 

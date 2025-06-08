@@ -14,7 +14,18 @@ func _on_start_menu_play() -> void:
 	# $background.queue_free()
 	var level_instance = level1.instantiate()
 	get_tree().root.call_deferred("add_child", level_instance)
-	$gameplay_background.start()
+
+func _on_start_menu_about() -> void:
+	print("Main received About signal - changing scene")
+	get_tree().change_scene_to_file("res://scenes/About/About.tscn")
+
+func _on_start_menu_how_to_play() -> void:
+	print("Main received How to Play signal - changing scene")
+	get_tree().change_scene_to_file("res://scenes/HowToPlay/HowToPlay.tscn")
+
+func _on_start_menu_credits() -> void:
+	print("Main received Credits signal - changing scene")
+	get_tree().change_scene_to_file("res://scenes/Credits/Credits.tscn")
 
 
 

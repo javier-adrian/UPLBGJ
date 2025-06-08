@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1y5r6xdj4p2v"]
 
-[ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_h3e3j"]
+[ext_resource type="Script" uid="uid://cr2d5kwegobrf" path="res://scripts/how_to_play.gd" id="1_h3e3j"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_f3g7p"]
 
 [node name="HowToPlay" type="Control"]
