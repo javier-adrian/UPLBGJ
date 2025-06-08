@@ -27,7 +27,8 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 
 
-func setup(x: float, y: float):
+func setup(x: float, y: float, frame: int):
+	$sprite.frame = frame
 	global_position = Vector2(x, initial_y)
 	target = y
 	set_process(true)

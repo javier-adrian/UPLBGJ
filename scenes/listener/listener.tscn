@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq45oddu6x63p"]
+[gd_scene load_steps=4 format=3 uid="uid://dq45oddu6x63p"]
 
 [ext_resource type="Script" uid="uid://bjk70fbgbsxwf" path="res://scripts/listener.gd" id="1_bhubb"]
+[ext_resource type="Texture2D" uid="uid://dycvbtpfhxo5m" path="res://Keyboard Letters and Symbols.png" id="2_1pql8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhubb"]
 
@@ -17,5 +18,14 @@ shape = SubResource("RectangleShape2D_bhubb")
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 volume_db = 20.0
+
+[node name="sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_1pql8")
+hframes = 8
+vframes = 14
+frame = 16
 
 [connection signal="timeout" from="random" to="." method="_on_random_timeout"]

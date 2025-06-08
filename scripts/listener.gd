@@ -12,6 +12,13 @@ extends Node2D
 	"right": load("res://assets/audio/F Key Alternate - Woooh.wav")
 }
 
+var frame_index: Dictionary = {
+	"left": 16,
+	"up": 34,
+	"down": 19,
+	"right": 21
+}
+
 var queue = []
 
 var distance_perfect: float = 5
@@ -27,12 +34,18 @@ var score_uninstall: float = 20
 func _ready():
 	Manager.spawn_note.connect(spawn_note)
 	%sfx.stream = sfx.get(key)
+	$sprite.frame = frame_index.get(key)
 
 func _input(event):
 	if Input.is_action_just_pressed(key):
 		Manager.listener_press.emit(key, index)
 		%sfx.play()
 		print(key)
+		$sprite.modulate = Color.WHITE
+		$sprite.scale = Vector2(2, 2)
+	if Input.is_action_just_released(key):
+		$sprite.modulate = Color8(255, 255, 255, 153)
+		$sprite.scale = Vector2(1.75, 1.75)
 
 func _process(delta):
 	if !queue.is_empty():
@@ -82,7 +95,7 @@ func spawn_note(key_title: String):
 	if key_title == key:
 		var note_instance = note.instantiate()
 		get_tree().root.call_deferred("add_child", note_instance)
-		note_instance.setup(position.x, position.y)
+		note_instance.setup(position.x, position.y, frame_index.get(key))
 
 		queue.push_back(note_instance)
 

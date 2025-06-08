@@ -1,14 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://ojkepjso5hgc"]
 
 [ext_resource type="Script" uid="uid://co31umyafkdi2" path="res://scripts/note.gd" id="1_wbc10"]
-[ext_resource type="Texture2D" uid="uid://br0njoklqkjvg" path="res://gol.png" id="2_cge7e"]
+[ext_resource type="Texture2D" uid="uid://dycvbtpfhxo5m" path="res://Keyboard Letters and Symbols.png" id="2_cge7e"]
 
 [node name="note" type="Node2D"]
 script = ExtResource("1_wbc10")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.75, 1.75)
 texture = ExtResource("2_cge7e")
+hframes = 8
+vframes = 14
+frame = 16
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
