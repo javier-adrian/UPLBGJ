@@ -23,12 +23,16 @@ func _process(delta):
 		# Check for success condition
 		if %spirit.value >= 100:
 			game_ended = true
+			# Stop gameplay
+			get_tree().paused = true
 			Manager.game_success.emit()
 			print("Success! Spirit reached 100!")
 		
 		# Check for failure condition (spirit depleted)
 		elif %spirit.value <= 0:
 			game_ended = true
+			# Stop gameplay
+			get_tree().paused = true
 			Manager.game_failure.emit()
 			print("Failure! Spirit depleted!")
 
@@ -71,10 +75,14 @@ func decrement_spirit(value: float):
 # Connect to song end (call this from your song player)
 func on_song_finished():
 	if !game_ended:
+		game_ended = true
+		# Stop gameplay
+		get_tree().paused = true
+		
 		if %spirit.value >= 50:  # Optional: require at least half spirit to succeed
 			Manager.game_success.emit()
 			print("Success! Song completed with sufficient spirit!")
 		else:
 			Manager.game_failure.emit()
 			print("Failure! Song completed with insufficient spirit!")
-		game_ended = true
+

@@ -9,6 +9,7 @@ var target: float = 0.0
 
 func _init():
 	set_process(false)
+	add_to_group("notes")  # Add to notes group for easy cleanup
 
 
 func _process(delta):
@@ -30,3 +31,4 @@ func setup(x: float, y: float):
 	global_position = Vector2(x, initial_y)
 	target = y
 	set_process(true)
+
