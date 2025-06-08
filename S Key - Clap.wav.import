@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bilyqgv6x03hf"
+path="res://.godot/imported/S Key - Clap.wav-bc65de56fece5f0933e6beaf0aaff6f4.sample"
+
+[deps]
+
+source_file="res://S Key - Clap.wav"
+dest_files=["res://.godot/imported/S Key - Clap.wav-bc65de56fece5f0933e6beaf0aaff6f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

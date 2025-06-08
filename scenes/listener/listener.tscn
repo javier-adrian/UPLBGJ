@@ -14,4 +14,8 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bhubb")
 
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = 10.0
+
 [connection signal="timeout" from="random" to="." method="_on_random_timeout"]

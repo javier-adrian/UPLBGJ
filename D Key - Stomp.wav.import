@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj4frc6exwbpq"
+path="res://.godot/imported/D Key - Stomp.wav-0a3a77eab97b27595e69cfbef4b3d009.sample"
+
+[deps]
+
+source_file="res://D Key - Stomp.wav"
+dest_files=["res://.godot/imported/D Key - Stomp.wav-0a3a77eab97b27595e69cfbef4b3d009.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -5,6 +5,13 @@ extends Node2D
 @export var key: String = ""
 @export var index: int = 0
 
+@onready var sfx: Dictionary = {
+	"left": load("res://A Key - Laban.wav"),
+	"up": load("res://assets/S Key - Clap.wav"),
+	"down": load("res://D Key - Stomp.wav"),
+	"right": load("res://F Key Alternate - Woooh.wav")
+}
+
 var queue = []
 
 var distance_perfect: float = 5
@@ -19,10 +26,13 @@ var score_uninstall: float = 20
 
 func _ready():
 	Manager.spawn_note.connect(spawn_note)
+	%sfx.stream = sfx.get(key)
 
 func _input(event):
 	if Input.is_action_just_pressed(key):
 		Manager.listener_press.emit(key, index)
+		%sfx.play()
+		print(%sfx.playing)
 
 func _process(delta):
 	if !queue.is_empty():

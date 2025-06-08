@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxd6h4fqi31xv"
+path="res://.godot/imported/A Key - Suntok.wav-b385fddbf00db00270fa6531c860434e.sample"
+
+[deps]
+
+source_file="res://A Key - Suntok.wav"
+dest_files=["res://.godot/imported/A Key - Suntok.wav-b385fddbf00db00270fa6531c860434e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
