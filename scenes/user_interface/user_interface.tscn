@@ -14,18 +14,22 @@ script = ExtResource("1_yqwyh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="score" type="RichTextLabel" parent="CanvasLayer"]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="score" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_e2uov")
 text = "0
 "
 
-[node name="combo" type="RichTextLabel" parent="CanvasLayer"]
+[node name="combo" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
 unique_name_in_owner = true
-offset_left = 1.0
-offset_top = 56.0
-offset_right = 41.0
-offset_bottom = 96.0
+layout_mode = 2
 text = "x0"
+
+[node name="spirit" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
