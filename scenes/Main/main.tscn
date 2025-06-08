@@ -1,14 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbkx6yhtn6ec2"]
 
 [ext_resource type="Script" uid="uid://cnp7ceeecfhof" path="res://scripts/main.gd" id="1_gol0p"]
-[ext_resource type="PackedScene" uid="uid://bang35dyd40e6" path="res://scenes/background/background.tscn" id="2_br8qb"]
+[ext_resource type="PackedScene" uid="uid://dketdm3pt0mat" path="res://scenes/gameplay_background/gameplay_background.tscn" id="3_8gcrf"]
 [ext_resource type="PackedScene" uid="uid://cvg6wiq8bcvsr" path="res://scenes/StartMenu/StartMenu.tscn" id="3_px18m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gol0p")
 
-[node name="background" parent="." instance=ExtResource("2_br8qb")]
+[node name="gameplay_background" parent="." instance=ExtResource("3_8gcrf")]
 
 [node name="StartMenu" parent="." instance=ExtResource("3_px18m")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="play" from="StartMenu" to="." method="_on_start_menu_play"]

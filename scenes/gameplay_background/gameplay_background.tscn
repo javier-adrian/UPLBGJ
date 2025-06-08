@@ -1,0 +1,192 @@
+[gd_scene load_steps=12 format=3 uid="uid://dketdm3pt0mat"]
+
+[ext_resource type="Script" uid="uid://b81koo7ybxao4" path="res://scripts/gameplay_background.gd" id="1_ipat5"]
+[ext_resource type="Texture2D" uid="uid://dx3t1v8hwooh6" path="res://chair1.png" id="1_pxiao"]
+[ext_resource type="Texture2D" uid="uid://3svnj166y0by" path="res://bg1.png" id="2_ipat5"]
+[ext_resource type="Texture2D" uid="uid://cfck85nxcbrta" path="res://imgpreview1.png" id="2_o0qmw"]
+[ext_resource type="Texture2D" uid="uid://dq7oto88etsyk" path="res://objects.png" id="3_o0qmw"]
+[ext_resource type="Texture2D" uid="uid://driqfqymqdy21" path="res://tv1.png" id="4_m8nf8"]
+[ext_resource type="Texture2D" uid="uid://c7stnwjsf8hc6" path="res://chracters.png" id="7_m8nf8"]
+
+[sub_resource type="Animation" id="Animation_ipat5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(743, 591)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.843, 2.843)]
+}
+
+[sub_resource type="Animation" id="Animation_m8nf8"]
+resource_name = "zoom_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(743, 591)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.843, 2.843)]
+}
+
+[sub_resource type="Animation" id="Animation_o0qmw"]
+resource_name = "zoom_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(743, 591), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.843, 2.843), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o0qmw"]
+_data = {
+&"RESET": SubResource("Animation_ipat5"),
+&"zoom_in": SubResource("Animation_m8nf8"),
+&"zoom_out": SubResource("Animation_o0qmw")
+}
+
+[node name="gameplay_background" type="Node2D"]
+position = Vector2(743, 591)
+scale = Vector2(2.843, 2.843)
+script = ExtResource("1_ipat5")
+
+[node name="Imgpreview1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_o0qmw")
+
+[node name="Chair1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_pxiao")
+
+[node name="Bg1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_ipat5")
+
+[node name="Objects" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_o0qmw")
+
+[node name="Tv1" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("4_m8nf8")
+
+[node name="one" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-228.28, 58.389)
+scale = Vector2(3.62293, 3.62293)
+texture = ExtResource("7_m8nf8")
+hframes = 2
+vframes = 5
+frame = 2
+region_rect = Rect2(0, 0, 104, 104)
+
+[node name="three" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(103.412, 58.389)
+scale = Vector2(3.62293, 3.62293)
+texture = ExtResource("7_m8nf8")
+hframes = 2
+vframes = 5
+frame = 6
+region_rect = Rect2(0, 0, 104, 104)
+
+[node name="four" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(257.474, 69.6447)
+scale = Vector2(3.62293, 3.62293)
+texture = ExtResource("7_m8nf8")
+hframes = 2
+vframes = 5
+frame = 8
+region_rect = Rect2(0, 0, 104, 104)
+
+[node name="Chair2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_pxiao")
+
+[node name="two" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-80.1969, 138.234)
+scale = Vector2(3.62293, 3.62293)
+texture = ExtResource("7_m8nf8")
+hframes = 2
+vframes = 5
+frame = 4
+region_rect = Rect2(0, 0, 104, 104)
+
+[node name="zero" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-394.654, 139.965)
+scale = Vector2(3.62293, 3.62293)
+texture = ExtResource("7_m8nf8")
+hframes = 2
+vframes = 5
+region_rect = Rect2(0, 0, 104, 104)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o0qmw")
+}
+
+[node name="Imgpreview2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.351685, 2.11044)
+scale = Vector2(0.897917, 0.897917)
+texture = ExtResource("2_o0qmw")
