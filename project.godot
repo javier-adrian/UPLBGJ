@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="No idea yet"
+<<<<<<< Updated upstream
 run/main_scene="uid://b307ypo35oj6j"
+=======
+run/main_scene="uid://bbkx6yhtn6ec2"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
