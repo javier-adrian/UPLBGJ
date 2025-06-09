@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvg6wiq8bcvsr"]
+[gd_scene load_steps=13 format=3 uid="uid://cvg6wiq8bcvsr"]
 
 [ext_resource type="Script" uid="uid://y37qeuvchaf6" path="res://scripts/start_menu.gd" id="1_5a8d0"]
 [ext_resource type="Texture2D" uid="uid://erq67mqkhkj3" path="res://GameScreen2_Title.png" id="1_80ocu"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="3_5a8d0"]
+[ext_resource type="AudioStream" uid="uid://darvii6s4ygd5" path="res://assets/audio/music/Juhani Junkala [Retro Game Music Pack] Title Screen.wav" id="4_58mk3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80ocu"]
 
@@ -250,6 +251,11 @@ text = "QUIT"
 libraries = {
 &"": SubResource("AnimationLibrary_krr3s")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_58mk3")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="button_down" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/MarginContainer/HBoxContainer/Button2" to="." method="_on_how_to_play_button_down"]
