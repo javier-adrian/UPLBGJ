@@ -243,6 +243,7 @@ func _on_start_menu_play() -> void:
 		$gameplay_background/AnimationPlayer.play("zoom_out")
 		print("Zoom out animation started")
 
+
 	if has_node("StartMenu/AnimationPlayer"):
 		$StartMenu/AnimationPlayer.play("play")
 		print("StartMenu play animation started")
@@ -251,6 +252,7 @@ func _on_start_menu_play() -> void:
 	print("Waiting for animations to complete...")
 	await get_tree().create_timer(2).timeout
 	print("Animation sequence complete, instantiating level")
+	$gameplay_background/AnimationPlayer.play("crowd")
 
 	# Debug: Check final states
 	print("Final background visible: ", $background.visible if has_node("background") else "No background node")
