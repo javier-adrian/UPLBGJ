@@ -1,0 +1,352 @@
+[gd_scene load_steps=4 format=3 uid="uid://biqo2sbxobd4f"]
+
+[ext_resource type="Script" uid="uid://db2ishvsxoh82" path="res://scripts/game_end_screen.gd" id="1_game_end"]
+[ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_border"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="GameEndScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_game_end")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopSection" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftPanel" type="Panel" parent="MainContainer/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_border")
+
+[node name="LeftContent" type="VBoxContainer" parent="MainContainer/TopSection/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinLabel" type="Label" parent="MainContainer/TopSection/LeftPanel/LeftContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 120
+text = "WIN"
+horizontal_alignment = 1
+
+[node name="ScoreContainer" type="VBoxContainer" parent="MainContainer/TopSection/LeftPanel/LeftContent"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoreLabel" type="Label" parent="MainContainer/TopSection/LeftPanel/LeftContent/ScoreContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 60
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="ScoreNumber" type="Label" parent="MainContainer/TopSection/LeftPanel/LeftContent/ScoreContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 100
+text = "00"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="Panel" parent="MainContainer/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_border")
+
+[node name="RightContent" type="VBoxContainer" parent="MainContainer/TopSection/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainContainer/TopSection/RightPanel/RightContent"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NewsLabel" type="Label" parent="MainContainer/TopSection/RightPanel/RightContent/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 50
+text = "NEWS"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TopSection/RightPanel/RightContent"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NewsContent" type="RichTextLabel" parent="MainContainer/TopSection/RightPanel/RightContent/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_font")
+theme_override_font_sizes/normal_font_size = 16
+text = "(THIS IS A PLACEHOLDER FOR THE IMAGE)
+
+Game completed successfully!
+
+Your performance was excellent.
+
+Thanks for playing!"
+
+[node name="BottomPanel" type="Panel" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_border")
+
+[node name="BottomContent" type="HBoxContainer" parent="MainContainer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsContainer" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PerfectCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Perfect" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/PerfectCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PerfectLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/PerfectCont/Perfect"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "PERFECT"
+horizontal_alignment = 1
+
+[node name="PerfectNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/PerfectCont/Perfect"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00"
+horizontal_alignment = 1
+
+[node name="GreatCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Great" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GreatCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GreatLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GreatCont/Great"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "GREAT"
+horizontal_alignment = 1
+
+[node name="GreatNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GreatCont/Great"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00"
+horizontal_alignment = 1
+
+[node name="GoodCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Good" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GoodCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GoodLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GoodCont/Good"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "GOOD"
+horizontal_alignment = 1
+
+[node name="GoodNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/GoodCont/Good"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00"
+horizontal_alignment = 1
+
+[node name="UninstallCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Uninstall" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/UninstallCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="UninstallLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/UninstallCont/Uninstall"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "UNINSTALL"
+horizontal_alignment = 1
+
+[node name="UninstallNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/UninstallCont/Uninstall"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00"
+horizontal_alignment = 1
+
+[node name="MissesCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Misses" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/MissesCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MissesLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/MissesCont/Misses"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "MISSES"
+horizontal_alignment = 1
+
+[node name="MissesNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/MissesCont/Misses"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00"
+horizontal_alignment = 1
+
+[node name="SpiritCont" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="Spirit" type="HBoxContainer" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/SpiritCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SpiritLabel" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/SpiritCont/Spirit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "SPIRIT"
+horizontal_alignment = 1
+
+[node name="SpiritNumber" type="Label" parent="MainContainer/BottomPanel/BottomContent/StatsContainer/SpiritCont/Spirit"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "00%"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/BottomPanel/BottomContent"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainContainer/BottomPanel/BottomContent/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="RetryButton" type="Button" parent="MainContainer/BottomPanel/BottomContent/MarginContainer/ButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+text = "RETRY"
+
+[node name="MainMenuButton" type="Button" parent="MainContainer/BottomPanel/BottomContent/MarginContainer/ButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+text = "MAIN MENU"
+
+[connection signal="pressed" from="MainContainer/BottomPanel/BottomContent/MarginContainer/ButtonContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainContainer/BottomPanel/BottomContent/MarginContainer/ButtonContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

@@ -4,6 +4,7 @@ var editing: bool = false
 var title: String = "Three Red Hearts"
 
 var fall_delay: float = 4.8
+var game_ended: bool = false  # Flag to stop spawning when game ends
 
 var key_output = [[], [], [], []]
 
@@ -23,14 +24,48 @@ var info: Dictionary = {
 }
 
 func _ready():
-	$Player.stream = info.get(title).get("music")
+	print("=== EDITOR _ready() CALLED ===")
+	print("Editor title: ", title)
+	print("Editor editing mode: ", editing)
+
+	# Reset game ended flag for new level
+	game_ended = false
+	print("Game ended flag reset to false")
+
+	# Reset hit counters for new game
+	Manager.reset_hit_counters()
+	print("Hit counters reset for new game")
+
+	# Connect to game end signals to stop spawning
+	Manager.game_success.connect(_on_game_ended)
+	Manager.game_failure.connect(_on_game_ended)
+	print("Connected to game end signals")
+
+	# Start a timer to periodically print stats for debugging
+	var stats_timer = Timer.new()
+	add_child(stats_timer)
+	stats_timer.wait_time = 5.0  # Print stats every 5 seconds
+	stats_timer.timeout.connect(_print_debug_stats)
+	stats_timer.start()
+	print("Debug stats timer started")
+
+	var music_resource = info.get(title).get("music")
+	print("Music resource: ", music_resource)
+
+	$Player.stream = music_resource
+	print("Music stream set, starting playback...")
 	$Player.play()
+	print("Music playback started")
 
 	if editing:
+		print("Editor in editing mode, connecting listener_press signal")
 		Manager.listener_press.connect(listener_press)
 	else:
+		print("Editor in play mode, setting up note spawning")
 		var timings = info.get(title).get("timings")
+		print("Raw timings: ", timings)
 		var timings_array = str_to_var(timings)
+		print("Parsed timings array: ", timings_array)
 
 		var index: int = 0
 
@@ -47,24 +82,67 @@ func _ready():
 				3:
 					key_name = "right"
 
+			print("Setting up ", key.size(), " notes for key: ", key_name)
 			for delay in key:
 				spawn_note(key_name, delay - fall_delay)
-			
+
 			index += 1
 
-func _input(event):
+		print("Note spawning setup complete")
+
+	print("=== EDITOR _ready() COMPLETE ===")
+
+func _input(_event):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		print(key_output)
 
-func listener_press(key: String, index: int):
+func listener_press(_key: String, index: int):
 	# print(index, " " + str($Player.get_playback_position()))
 	# key_output[index].append($Player.get_playback_position() - fall_delay)
 	key_output[index].append($Player.get_playback_position())
 
+func _on_game_ended():
+	print("Game ended - stopping note spawning")
+	game_ended = true
+	# Also stop the music
+	if $Player.playing:
+		$Player.stop()
+		print("Music stopped")
+
 func spawn_note(key: String, delay: float):
-	await get_tree().create_timer(delay).timeout
+	print("Spawning note for key '", key, "' with delay ", delay)
+	var timer = get_tree().create_timer(delay)
+	await timer.timeout
+
+	# Check if game has ended before spawning
+	if game_ended:
+		print("Game ended - skipping note spawn for key: ", key)
+		return
+
+	# Check if this node is still valid and in the scene tree before spawning
+	if not is_inside_tree() or is_queued_for_deletion():
+		print("Editor no longer in tree, canceling note spawn for key: ", key)
+		return
+
+	print("Emitting spawn_note signal for key: ", key)
 	Manager.spawn_note.emit(key)
+
+# Function to stop all note spawning
+func stop_spawning():
+	print("Stopping editor note spawning")
+	# Stop the music player
+	if has_node("Player"):
+		$Player.stop()
+		print("Music player stopped")
+
+	# Mark this editor as inactive
+	set_process(false)
+	set_physics_process(false)
 
 
 func _on_player_finished() -> void:
 	print(key_output)
+
+func _print_debug_stats():
+	if not game_ended:
+		Manager.print_current_stats()

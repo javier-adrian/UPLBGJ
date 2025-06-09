@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dq45oddu6x63p" path="res://scenes/listener/listener.tscn" id="1_h3e3j"]
 [ext_resource type="PackedScene" uid="uid://c73iy25eist6y" path="res://scenes/user_interface/user_interface.tscn" id="2_nbgty"]
 [ext_resource type="PackedScene" uid="uid://bxp4l5dd2xsik" path="res://scenes/editor/editor.tscn" id="3_i166f"]
-[ext_resource type="PackedScene" uid="uid://c8y5r6xdj4p2v" path="res://scenes/end_screen/end_screen.tscn" id="4_j7k2l"]
+[ext_resource type="PackedScene" uid="uid://biqo2sbxobd4f" path="res://scenes/game_end_screen/game_end_screen.tscn" id="4_j7k2l"]
 
 [node name="level" type="Node2D"]
 
@@ -32,5 +32,5 @@ index = 3
 
 [node name="editor" parent="." instance=ExtResource("3_i166f")]
 
-[node name="EndScreen" parent="." instance=ExtResource("4_j7k2l")]
+[node name="GameEndScreen" parent="." instance=ExtResource("4_j7k2l")]
 visible = false
