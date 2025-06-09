@@ -1,6 +1,6 @@
 extends Node2D
 
-var editing: bool = false
+@export var editing: bool = false
 var title: String = "Three Red Hearts"
 
 var fall_delay: float = 4.8
