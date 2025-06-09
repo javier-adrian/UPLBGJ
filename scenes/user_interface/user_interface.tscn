@@ -1,32 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://c73iy25eist6y"]
+[gd_scene load_steps=9 format=3 uid="uid://c73iy25eist6y"]
 
 [ext_resource type="Script" uid="uid://ej382rxw0sud" path="res://scripts/user_interface.gd" id="1_yqwyh"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_e2uov"]
+[ext_resource type="Texture2D" uid="uid://cqfclwiwdyd77" path="res://assets/visual/under.png" id="3_2dtu1"]
+[ext_resource type="Texture2D" uid="uid://dq7oto88etsyk" path="res://objects.png" id="3_f1hci"]
+[ext_resource type="Texture2D" uid="uid://cd043sbbvvun3" path="res://assets/visual/over.png" id="4_f1hci"]
 
 [sub_resource type="Animation" id="Animation_cj8yd"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/VBoxContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_e2uov"]
 resource_name = "fade_in"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/VBoxContainer:modulate")
+tracks/0/path = NodePath("CanvasLayer/spirit:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/combo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/score:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -50,29 +65,45 @@ script = ExtResource("1_yqwyh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="score" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+[node name="score" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
+custom_minimum_size = Vector2(0, 25)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 222.0
+offset_bottom = 33.0
 theme_override_fonts/normal_font = ExtResource("2_e2uov")
 text = "0
 "
 
-[node name="combo" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+[node name="combo" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
+custom_minimum_size = Vector2(0, 25)
+offset_left = 8.0
+offset_top = 37.0
+offset_right = 278.0
+offset_bottom = 62.0
+theme_override_fonts/normal_font = ExtResource("2_e2uov")
 text = "x0"
 
-[node name="spirit" type="ProgressBar" parent="CanvasLayer/VBoxContainer"]
+[node name="Objects" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(574, 325)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_f1hci")
+
+[node name="spirit" type="TextureProgressBar" parent="CanvasLayer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-max_value = 101.0
+texture_filter = 1
+offset_left = 14.0
+offset_top = 179.0
+offset_right = 46.0
+offset_bottom = 211.0
+scale = Vector2(4, 4)
+size_flags_vertical = 3
+texture_under = ExtResource("3_2dtu1")
+texture_progress = ExtResource("4_f1hci")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

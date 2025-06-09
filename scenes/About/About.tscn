@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1y5r6xdj4p2v"]
 
-[ext_resource type="Script" path="res://scripts/about.gd" id="1_a3e3j"]
+[ext_resource type="Script" uid="uid://civq7xpmmgxhe" path="res://scripts/about.gd" id="1_a3e3j"]
 [ext_resource type="FontFile" uid="uid://dvq5mm7slk5bj" path="res://VCR_OSD_MONO_1.001.ttf" id="2_f3g7p"]
 
 [node name="About" type="Control"]
